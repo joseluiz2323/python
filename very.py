@@ -9,7 +9,7 @@ from fake_useragent import UserAgent
 
 XInstagramAJAX = csrftoken = ds_user_id = sessionid = ig_did = mid = ig_nrcb = shbid = shbts = rur = XIGWWWClaim = False
 
-#jose
+
 def sessionData(lista, user_agent):
     contas = lista.splitlines()
     conta = random.choice(contas)
@@ -252,6 +252,7 @@ while True:
     csrftoken, ds_user_id, sessionid, ig_did, mid, ig_nrcb, rur = sessionData(
         lista, user_agent)
     if sessionid != False:
+        pass
         break
 
 if sessionid != False:
