@@ -16,7 +16,7 @@ from gravar_logs import criacao_de_logo, logs
 
 chrome_service = ChromeService('./chromedriver.exe')
 chrome_service.creationflags = CREATE_NO_WINDOW
-
+######
 
 def capCodEmail(email, num, criacao_de_logo):
     ######

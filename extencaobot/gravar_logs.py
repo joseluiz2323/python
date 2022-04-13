@@ -1,6 +1,9 @@
 import os
 from datetime import datetime
 
+#######
+# retorna o numero do bot
+
 
 def logs():
     output = os.popen('wmic process get description').read()
