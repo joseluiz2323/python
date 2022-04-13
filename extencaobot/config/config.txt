@@ -1,0 +1,6 @@
+emailfake = 0
+emailapi = 1
+anonimo = 1
+navsemimages = 1
+navocultos = 0
+senha = gen1122
