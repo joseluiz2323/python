@@ -18,6 +18,8 @@ def logs():
 
 print(logs())
 
+# grava na lista de dados
+
 
 def criacao_de_logo(numbers, logs):
     data = datetime.today().strftime('%H:%M:%S')
