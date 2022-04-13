@@ -19,6 +19,8 @@ chrome_service.creationflags = CREATE_NO_WINDOW
 
 # __main__
 
+# Testemail
+
 
 def capCodEmail(email, num, criacao_de_logo):
     criacao_de_logo(num, 'esperando codigo')
