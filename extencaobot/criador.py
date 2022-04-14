@@ -9,7 +9,8 @@ import requests
 import random
 from selenium.webdriver.chrome.service import Service as ChromeService
 from subprocess import CREATE_NO_WINDOW
-
+from selenium.webdriver.chrome.service import Service
+from subprocess import CREATE_NO_WINDOW
 from credentialss import getvalueFirebase, setvalorFirebase
 from gravar_logs import criacao_de_logo, logs
 
@@ -17,6 +18,7 @@ from gravar_logs import criacao_de_logo, logs
 chrome_service = ChromeService('./chromedriver.exe')
 chrome_service.creationflags = CREATE_NO_WINDOW
 ######
+
 
 def capCodEmail(email, num, criacao_de_logo):
     ######
@@ -111,9 +113,11 @@ def montador(user, senh):
         options.add_experimental_option("mobileEmulation", mobile_emulation)
         options.add_argument('--incognito')
         options.add_argument("--window-size=640,920")
+        options.creationflags = CREATE_NO_WINDOW
         driver = webdriver.Chrome(
             executable_path=r'chromedriver.exe', options=options
         )
+
         driver.get('https://www.instagram.com/accounts/login/?next=/login/')
         driver.implicitly_wait(10)
         try:
@@ -184,6 +188,7 @@ def montador(user, senh):
 
 
 def criacao(config):
+    print(config)
     numero_do_log = logs()
     bre = 0
     taxa = 0
@@ -194,17 +199,19 @@ def criacao(config):
             if getvalueFirebase() != 1:
                 break
         try:
-            senha = config[5].split('=')[1].replace(' ', '')
+            senha = config[4].split('=')[1].replace(' ', '')
             firefox_options = webdriver.ChromeOptions()
             firefox_options.add_argument(
                 "--disable-blink-features=AutomationControlled")
             firefox_options.add_argument('--no-sandbox')
-            if config[2] == 'anonimo = 1':
+            if config[1] == 'anonimo = 1':
                 firefox_options.add_argument('--incognito')
             firefox_options.add_argument('--disable-extensions')
+            if config[3] == "navocultos = 1":
+                firefox_options.add_argument("--headless")
             firefox_options.add_argument('--profile-directory=Default')
             firefox_options.add_argument('--window-size=540,920')
-            if config[3] == 'navsemimages = 1':
+            if config[2] == 'navsemimages = 1':
                 prefs = {"profile.managed_default_content_settings.images": 2}
             simp_path = r'config\\useragents_desktop.txt'
             abs_path = os.path.abspath(simp_path)
@@ -214,8 +221,11 @@ def criacao(config):
             firefox_options.add_argument(
                 f"user-agent={useragents}")
             firefox_options.add_experimental_option("prefs", prefs)
+            firefox_options.creationflags = CREATE_NO_WINDOW
+            chrome_service = ChromeService(r'./chromedriver.exe')
+            chrome_service.creationflags = CREATE_NO_WINDOW
             driver = webdriver.Chrome(
-                options=firefox_options)
+                options=firefox_options, service=chrome_service)
             temp_page = driver.implicitly_wait(15)
             driver.get('https://www.instagram.com/accounts/emailsignup/')
             print(driver.title)
@@ -253,13 +263,12 @@ def criacao(config):
             criacao_de_logo(numero_do_log, f'Nome gerado {nomeSobrenome}')
             #######
             # selecionando email
-            if config[1] == 'email = 0':
+            if config[0] == 'email = 0':
                 emailroba = '@lyonsbot.com.br'
                 criacao_de_logo(numero_do_log, 'Gerando email')
                 email = f"{random.randint(10, 99)}{nomeSobrenome.replace(' ', '')[0:9]}{random.randint(100, 999)}"
                 email2 = email+emailroba
-
-            elif config[0] == 'email = 0':
+            elif config[0] == 'email = 1':
                 email2 = capCodEmailfake(driver, 1)
             driver.find_element_by_name(
                 'emailOrPhone').send_keys(email2)
@@ -318,7 +327,7 @@ def criacao(config):
                 criacao_de_logo(numero_do_log, 'Selecionado data de usuario')
                 ################ ##############
                 # verifica o email para confirmar o confirmacao do codigo de cadastro
-                if config[1] == 'email = 0':
+                if config[0] == 'email = 0':
                     codigoEmail = capCodEmail(
                         email, numero_do_log, criacao_de_logo)
                     print(codigoEmail)
@@ -379,6 +388,7 @@ def criacao(config):
                         sleep(4)
                     except:
                         pass
+
                     try:
                         driver.find_element_by_name(
                             'username').send_keys(email2)
@@ -394,6 +404,7 @@ def criacao(config):
                     pass
                 driver.get('https://www.instagram.com/accounts/edit/')
                 driver.implicitly_wait(10)
+                sleep(1)
                 nomeUser = ''
                 nomeUser = driver.find_element_by_class_name('kHYQv ').text
                 if nomeUser == '':

@@ -6,7 +6,7 @@ from time import sleep
 import requests
 from datetime import datetime
 from fake_useragent import UserAgent
-
+from datetime import datetime
 XInstagramAJAX = csrftoken = ds_user_id = sessionid = ig_did = mid = ig_nrcb = shbid = shbts = rur = XIGWWWClaim = False
 
 
@@ -80,10 +80,13 @@ def verificar(conta, csrftoken, ds_user_id, sessionid, ig_did, mid, ig_nrcb, rur
 
     return response
 
+# funcao para retornar a data e hora atural
+
 
 def very(lista, csrftoken, ds_user_id, sessionid,
          ig_did, mid, ig_nrcb, rur, user_agent):
     contas = lista.splitlines()
+    contas.insert(0, '1 2')
     cont = 0
     sms = 0
     ativas = 0
@@ -92,10 +95,41 @@ def very(lista, csrftoken, ds_user_id, sessionid,
     lins = []
     print(len(contas))
     for conta in contas:
+        conta = conta.split()
         cont += 1
+        if cont == 1:
+            conta[0] = 'data da verificacao'
+            data = datetime.today().strftime('%H:%M:%S')
+            conta[1] = f"{data}"
+            try:
+                nome_arquivo = 'contas-ativas-completas.txt'
+                arquivo = open(nome_arquivo, 'r+')
+            except FileNotFoundError:
+                arquivo = open(nome_arquivo, 'w+')
+            arquivo.close()
+            f = open('contas-ativas-completas.txt', 'r')
+            conteudo = f.readlines()
+            conteudo.append(f'\n{conta[0]} {conta[1]}')
+            f2 = open('contas-ativas-completas.txt', 'w')
+            f2.writelines(conteudo)
+            f2 = open('contas-ativas-completas.txt', 'r')
+            f2.close()
+            try:
+                nome_arquivo = 'contas-ativas-incompletas.txt'
+                arquivo = open(nome_arquivo, 'r+')
+            except FileNotFoundError:
+                arquivo = open(nome_arquivo, 'w+')
+            arquivo.close()
+            f = open('contas-ativas-incompletas.txt', 'r')
+            conteudo = f.readlines()
+            conteudo.append(f'\n{conta[0]} {conta[1]}')
+            f2 = open('contas-ativas-incompletas.txt', 'w')
+            f2.writelines(conteudo)
+            f2 = open('contas-ativas-incompletas.txt', 'r')
+            f2.close()
+
         sleep(random.randint(0, 1))
         try:
-            conta = conta.split()
             dados = verificar(conta[0], csrftoken, ds_user_id, sessionid,
                               ig_did, mid, ig_nrcb, rur, user_agent)
             for j in dados.text.splitlines():
@@ -135,115 +169,17 @@ def very(lista, csrftoken, ds_user_id, sessionid,
                 f2 = open('contas-ativas-incompletas.txt', 'r')
                 f2.close()
         except:
-            print(f'{cont} {conta[0]} conta com verificacao')
+            if cont == 1:
+                print(f'{cont-1} {conta[0]} {conta[1]} ')
+            else:
+                print(f'{cont} {conta[0]} conta com verificacao')
             sms += 1
             pass
         lins.clear()
     return completas, incompletas, cont, sms
 
 
-lista = """"mariaalicesouza9867 gen1122
-luizfelipedias782 gen1122
-mariaclaracostela670 gen1122
-sabrinadasneves401 gen1122
-srtaemanuellydaluz91 gen1122
-pietrafarias928 gen1122
-brenoalmeida6076 gen1122
-emanuellaferreira198 gen1122
-anajuliamendes9203 gen1122
-rafaeladacosta464 gen1122
-neilan.froylan9 gen1122
-srcaiodaconceicao769 gen1122
-marcosviniciusdacunha78 gen1122
-cauaferreira6082 gen1122
-julianacostela12 gen1122
-joaolucasfarias838 gen1122
-mariaceciliaporto54 gen1122
-isadorarezende9232 gen1122
-marcosviniciusnascimento410 gen1122
-srdanilopinto43 gen1122
-luizfelipedias720 gen1122
-amandaramos7488 gen1122
-srheitorrodrigues74 gen1122
-isadorarezende3686 gen1122
-mariaalicefarias311 gen1122
-srheitorrodrigues56 gen1122
-anajuliacavalcanti5316 gen1122
-joaomiguelbarros9718 gen1122
-juliabarbosa1364 gen1122
-noahsantos2974 gen1122
-franciscoribeiro240 gen1122
-srheitorrodrigues47 gen1122
-pietrocampos667 gen1122
-theodasneves44 gen1122
-marcosviniciusnascimento9015 gen1122
-pedrohenriquedapaz95 gen1122
-samueldias2719 gen1122
-drmarcelopires98 gen1122
-pietrafarias659 gen1122
-sryuriramos56 gen1122
-otaviosales315 gen1122
-drfernandocunha97 gen1122
-brenoalmeida930 gen1122
-anabeatrizduarte5959 gen1122
-benjaminlopes139 gen1122
-emanuellaferreira385 gen1122
-anajuliacavalcanti915 gen1122
-analuizacunha694 gen1122
-pietrafarias922 gen1122
-analuizacunha532 gen1122
-drlucasfernandes596 gen1122
-isabellysantos428 gen1122
-yasminrodrigues8061 gen1122
-rafaelamoura9078 gen1122
-mariaclaracostela49 gen1122
-kaiquemartins9185 gen1122
-joaomiguelbarros95 gen1122
-luizfernandopinto809 gen1122
-paulovieira3878 gen1122
-gustavocarvalho572 gen1122
-laviniasouza974 gen1122
-eero.zidaan5 gen1122
-gabriellydacruz14 gen1122
-eloahferreira5989 gen1122
-migueldacruz393 gen1122
-srcaiodaconceicao95 gen1122
-juliaviana7250 gen1122
-marcelodias763 gen1122
-gustavocarvalho224 gen1122
-caiodaconceicao647 gen1122
-juliabarbosa7522 gen1122
-joaovitorporto75 gen1122
-yasminrodrigues7320 gen1122
-camiladarosa75 gen1122
-theodasneves30 gen1122
-srtaamandabarros16 gen1122
-mariaceciliaporto164 gen1122
-srrodrigopires16 gen1122
-rafaeladacosta206 gen1122
-pietrafarias1952 gen1122
-drgustavomendes739 gen1122
-isaacvieira994 gen1122
-yasminrodrigues7816 gen1122
-marcosviniciusdacunha74 gen1122
-drfernandocunha74 gen1122
-samueldias800 gen1122
-joaolucasfarias631 gen1122
-sabrinadasneves159 gen1122
-laviniasouza118 gen1122
-juliaviana5178 gen1122
-bryanaraujo1027 gen1122
-caiofogaca63 gen1122
-srpedrolucasdaconceicao17 gen1122
-yasminrodrigues2989 gen1122
-luizfelipedias7463 gen1122
-analuizamelo701 gen1122
-paulovieira143 gen1122
-yasminrodrigues8338 gen1122
-anabeatrizviana7437 gen1122
-srheitorrodrigues42 gen1122
-draalicemelo965 gen1122
-alexiamonteiro2990 gen1122
+lista = """"
 """
 ua = UserAgent()
 user_agent = ua.random

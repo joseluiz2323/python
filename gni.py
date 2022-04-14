@@ -3,11 +3,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 # atualizacao efetuada
+# atualizacao efetuada
 
 
 def veryGni():
     click = 0
-    firefox_options = webdriver.ChromeOptions()
+    firefox_options = webdriver.EdgeOptions()
     firefox_options.add_argument(
         "--disable-blink-features=AutomationControlled")
     firefox_options.add_argument("--no-sandbox")
@@ -15,8 +16,8 @@ def veryGni():
     firefox_options.add_argument('--profile-directory=Default')
     prefs = {"profile.managed_default_content_settings.images": 2}
     firefox_options.add_experimental_option("prefs", prefs)
-    driver = webdriver.Chrome(
-        executable_path=r'./chromedriver.exe', options=firefox_options)
+    driver = webdriver.Edge(
+        executable_path=r'./msedgedriver.exe', options=firefox_options)
     driver.get('https://www.ganharnoinsta.com/painel/?pagina=logout')
     awit = driver.implicitly_wait(15)
     awit

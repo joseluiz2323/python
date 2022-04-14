@@ -1,0 +1,19 @@
+
+1-Criado
+1-21:12:41-Criado
+0-21:12:41-Criacao iniciada
+1-21:12:54-Criado
+0-21:12:55-Criacao iniciada
+0-21:13:27-Gerando nome
+0-21:13:27-Nome gerado Ana Julia Mendes
+1-21:14:27-Criado
+0-21:14:27-Criacao iniciada
+1-21:54:00-Criado
+0-21:54:00-Criacao iniciada
+0-21:54:07-Gerando nome
+0-21:54:07-Nome gerado Juliana Costela
+0-21:54:10-Criacao iniciada
+0-21:54:15-Criacao iniciada
+0-21:54:30-Gerando nome
+0-21:54:30-Nome gerado Caio da Conceicao
+0-21:54:59-Criacao iniciada

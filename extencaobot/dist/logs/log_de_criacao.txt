@@ -1,0 +1,29 @@
+
+1-Criado
+1-21:12:41-Criado
+0-21:12:41-Criacao iniciada
+1-21:12:54-Criado
+0-21:12:55-Criacao iniciada
+0-21:13:27-Gerando nome
+0-21:13:27-Nome gerado Ana Julia Mendes
+1-21:14:27-Criado
+0-21:14:27-Criacao iniciada
+1-21:57:16-Criado
+1-21:57:16-Criacao iniciada
+1-21:57:49-Gerando nome
+1-21:57:49-Nome gerado Rafaela Moura
+1-21:58:01-Selecionado data de usuario
+1-22:01:05-Criado
+1-22:01:05-Criacao iniciada
+1-22:17:48-Criado
+1-22:17:48-Criacao iniciada
+1-22:18:22-Gerando nome
+1-22:18:22-Nome gerado Dr Lucas Fernandes
+1-22:19:38-Criacao iniciada
+1-22:19:47-Criacao iniciada
+1-22:31:41-Criado
+1-22:31:41-Criacao iniciada
+1-22:32:06-Criado
+1-22:32:07-Criacao iniciada
+1-22:44:52-Criado
+1-22:44:52-Criacao iniciada
