@@ -6,7 +6,7 @@ from time import sleep
 import requests
 from datetime import datetime
 from fake_useragent import UserAgent
-from datetime import datetime
+
 XInstagramAJAX = csrftoken = ds_user_id = sessionid = ig_did = mid = ig_nrcb = shbid = shbts = rur = XIGWWWClaim = False
 
 
@@ -97,36 +97,36 @@ def very(lista, csrftoken, ds_user_id, sessionid,
     for conta in contas:
         conta = conta.split()
         cont += 1
-        if cont == 1:
-            conta[0] = 'data da verificacao'
-            data = datetime.today().strftime('%H:%M:%S')
-            conta[1] = f"{data}"
-            try:
-                nome_arquivo = 'contas-ativas-completas.txt'
-                arquivo = open(nome_arquivo, 'r+')
-            except FileNotFoundError:
-                arquivo = open(nome_arquivo, 'w+')
-            arquivo.close()
-            f = open('contas-ativas-completas.txt', 'r')
-            conteudo = f.readlines()
-            conteudo.append(f'\n{conta[0]} {conta[1]}')
-            f2 = open('contas-ativas-completas.txt', 'w')
-            f2.writelines(conteudo)
-            f2 = open('contas-ativas-completas.txt', 'r')
-            f2.close()
-            try:
-                nome_arquivo = 'contas-ativas-incompletas.txt'
-                arquivo = open(nome_arquivo, 'r+')
-            except FileNotFoundError:
-                arquivo = open(nome_arquivo, 'w+')
-            arquivo.close()
-            f = open('contas-ativas-incompletas.txt', 'r')
-            conteudo = f.readlines()
-            conteudo.append(f'\n{conta[0]} {conta[1]}')
-            f2 = open('contas-ativas-incompletas.txt', 'w')
-            f2.writelines(conteudo)
-            f2 = open('contas-ativas-incompletas.txt', 'r')
-            f2.close()
+        # if cont == 1:
+        #     conta[0] = 'data da verificacao'
+        #     data = datetime.today().strftime('%H:%M:%S')
+        #     conta[1] = f"{data}"
+        #     try:
+        #         nome_arquivo = 'contas-ativas-completas.txt'
+        #         arquivo = open(nome_arquivo, 'r+')
+        #     except FileNotFoundError:
+        #         arquivo = open(nome_arquivo, 'w+')
+        #     arquivo.close()
+        #     f = open('contas-ativas-completas.txt', 'r')
+        #     conteudo = f.readlines()
+        #     conteudo.append(f'\n{conta[0]} {conta[1]}')
+        #     f2 = open('contas-ativas-completas.txt', 'w')
+        #     f2.writelines(conteudo)
+        #     f2 = open('contas-ativas-completas.txt', 'r')
+        #     f2.close()
+        #     try:
+        #         nome_arquivo = 'contas-ativas-incompletas.txt'
+        #         arquivo = open(nome_arquivo, 'r+')
+        #     except FileNotFoundError:
+        #         arquivo = open(nome_arquivo, 'w+')
+        #     arquivo.close()
+        #     f = open('contas-ativas-incompletas.txt', 'r')
+        #     conteudo = f.readlines()
+        #     conteudo.append(f'\n{conta[0]} {conta[1]}')
+        #     f2 = open('contas-ativas-incompletas.txt', 'w')
+        #     f2.writelines(conteudo)
+        #     f2 = open('contas-ativas-incompletas.txt', 'r')
+        #     f2.close()
 
         sleep(random.randint(0, 1))
         try:

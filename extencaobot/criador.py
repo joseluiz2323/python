@@ -1,15 +1,12 @@
 from distutils import extension
 import os
 from time import sleep
-from tkinter.tix import Tree
-from pyparsing import autoname_elements
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import requests
-import random
-from selenium.webdriver.chrome.service import Service as ChromeService
-from subprocess import CREATE_NO_WINDOW
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.service import Service as ChromeService
+import random
+import requests
 from subprocess import CREATE_NO_WINDOW
 from credentialss import getvalueFirebase, setvalorFirebase
 from gravar_logs import criacao_de_logo, logs
