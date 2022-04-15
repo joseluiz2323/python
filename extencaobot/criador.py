@@ -100,6 +100,7 @@ def capCodEmailfake(driver, temp):
 
 
 def montador(config, user, senh):
+    very = 0
     try:
         options = webdriver.ChromeOptions()
         if config["navegador"]["ocultar_navegador"]:
@@ -218,6 +219,9 @@ def montador(config, user, senh):
                 sleep(5)
                 driver.find_element_by_class_name('UP43G').click()
             except:
+                very += 1
+                if very == 4:
+                    break
                 print('erro')
                 try:
                     driver.find_element_by_class_name('cB_4K  ').click()
@@ -526,6 +530,7 @@ def criacao(config):
                     except:
                         pass
                 if taxa == 5:
+                    driver.quit()
                     setvalorFirebase(nomeUser + ' ' + senha)
                     taxa = 0
                     if config["montagem"]["mont"]:
