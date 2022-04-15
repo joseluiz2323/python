@@ -1,10 +1,12 @@
 {
     "navegador": {
-        "navegador_anonimo": true,
+        "navegador_anonimo": false,
         "ocultar_navegador": false,
         "desativar_imagens": true,
-        "user_agent_aleatorio": true,
-        "user_agent_fixo": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
+        "user_agent_aleatorio_mobile": true,
+        "user_agent_aleatorio_desktop": true,
+        "user_agent_fixo_desktop": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36",
+        "user_agent_fixo_mobile": "Mozilla/5.0 (Linux; Android 6.0.1; SM-G532G Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Mobile Safari/537.36"
     },
     "email": {
         "fakemail": true,
@@ -31,6 +33,11 @@
         "limpar_login": true,
         "verificar_postagens": true,
         "trocar_email": true,
+        "qauntidade_de_fotos": 11,
+        "tempo_entre_postagem": {
+            "inicial": 3,
+            "final": 5
+        },
         "seguir_recomendados": {
             "seguir": 10,
             "seguir_ao_criar": false,
@@ -38,7 +45,7 @@
             "seguir_no_final_da_montagem": false
         },
         "postagen_de_story": {
-            "quantidade": 10,
+            "quantidade": 2,
             "tempo_inicial": 1,
             "tempo_final": 2
         }

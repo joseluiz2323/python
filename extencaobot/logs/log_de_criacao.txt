@@ -41,3 +41,147 @@
 0-07:10:33-Criacao iniciada
 1-07:11:02-Criado
 0-07:11:02-Criacao iniciada
+1-08:03:50-Criado
+0-08:03:50-Criacao iniciada
+0-08:04:30-Gerando nome
+0-08:04:30-Nome gerado Noah Santos
+1-08:06:42-Criado
+0-08:06:42-Criacao iniciada
+0-08:07:03-Gerando nome
+0-08:07:03-Nome gerado Srta Emanuelly da Luz
+0-08:07:16-Selecionado data de usuario
+1-08:09:43-Criado
+0-08:09:44-Criacao iniciada
+1-08:10:46-Criado
+0-08:10:46-Criacao iniciada
+1-08:11:14-Criado
+0-08:11:14-Criacao iniciada
+1-08:12:07-Criado
+0-08:12:08-Criacao iniciada
+0-08:12:42-Gerando nome
+0-08:12:42-Nome gerado Elisa Silva
+1-08:13:38-Criado
+0-08:13:38-Criacao iniciada
+1-08:14:24-Criado
+0-08:14:24-Criacao iniciada
+1-08:14:53-Criado
+0-08:14:53-Criacao iniciada
+1-08:15:05-Criado
+0-08:15:05-Criacao iniciada
+1-08:16:38-Criado
+0-08:16:38-Criacao iniciada
+1-08:16:56-Criado
+0-08:16:56-Criacao iniciada
+0-08:17:30-Gerando nome
+0-08:17:30-Nome gerado Caio Fogaca
+0-08:17:42-Selecionado data de usuario
+1-08:19:27-Criado
+0-08:19:27-Criacao iniciada
+1-08:21:35-Criado
+0-08:21:35-Criacao iniciada
+1-08:21:46-Criado
+0-08:21:46-Criacao iniciada
+0-08:21:51-Criacao iniciada
+0-08:21:55-Criacao iniciada
+1-08:23:31-Criado
+0-08:23:32-Criacao iniciada
+1-08:25:07-Criado
+0-08:25:07-Criacao iniciada
+1-08:25:15-Criado
+0-08:25:15-Criacao iniciada
+1-08:25:22-Criado
+0-08:25:22-Criacao iniciada
+1-08:25:30-Criado
+0-08:25:30-Criacao iniciada
+1-08:25:37-Criado
+0-08:25:37-Criacao iniciada
+0-08:25:41-Instagram Bloqueou a pagina
+0-08:25:43-Esperando 10 segundos
+1-08:26:59-Criado
+0-08:27:00-Criacao iniciada
+0-08:27:04-Instagram Bloqueou a pagina
+0-08:27:06-Esperando 10 segundos
+0-08:27:14-Criacao iniciada
+0-08:27:48-Gerando nome
+0-08:27:48-Nome gerado Luiz Gustavo Lopes
+0-08:28:01-Selecionado data de usuario
+1-08:35:58-Criado
+1-08:37:23-Criado
+1-08:37:44-Criado
+1-08:38:49-Criado
+1-08:39:18-Criado
+1-08:39:32-Criado
+1-08:40:26-Criado
+1-08:42:36-Criado
+1-08:45:06-Criado
+1-08:46:32-Criado
+1-08:47:08-Criado
+1-08:49:45-Criado
+1-08:50:29-Criado
+1-08:51:50-Criado
+1-08:55:32-Criado
+1-08:56:56-Criado
+1-09:00:15-Criado
+1-09:01:58-Criado
+1-09:22:52-Criado
+0-09:22:53-Criacao iniciada
+0-09:23:25-Gerando nome
+0-09:23:25-Nome gerado Sr Rodrigo Pires
+0-09:23:37-Selecionado data de usuario
+1-09:25:14-Criado
+0-09:25:14-Criacao iniciada
+0-09:25:49-Gerando nome
+0-09:25:49-Nome gerado Emanuella Ferreira
+0-09:26:01-Selecionado data de usuario
+1-09:31:06-Criado
+0-09:31:06-Criacao iniciada
+0-09:31:41-Gerando nome
+0-09:31:41-Nome gerado Joao Miguel Barros
+0-09:32:08-Selecionado data de usuario
+1-09:37:27-Criado
+0-09:37:27-Criacao iniciada
+0-09:38:01-Gerando nome
+0-09:38:01-Nome gerado Dr Gustavo Mendes
+0-09:38:28-Selecionado data de usuario
+1-09:40:01-Criado
+0-09:40:01-Criacao iniciada
+0-09:40:36-Gerando nome
+0-09:40:36-Nome gerado Eduarda Monteiro
+0-09:40:46-Selecionado data de usuario
+0-09:45:10-Criacao iniciada
+0-09:45:44-Gerando nome
+0-09:45:44-Nome gerado Srta Amanda Barros
+0-09:47:29-Selecionado data de usuario
+1-09:49:34-Criado
+0-09:49:34-Criacao iniciada
+0-09:50:34-Gerando nome
+0-09:50:34-Nome gerado Dr Marcelo Pires
+0-09:51:01-Selecionado data de usuario
+1-10:18:25-Criado
+0-10:18:25-Criacao iniciada
+0-10:19:00-Gerando nome
+0-10:19:00-Nome gerado Luiza Campos
+0-10:19:26-Selecionado data de usuario
+1-10:20:16-Criado
+0-10:20:16-Criacao iniciada
+1-10:20:54-Criado
+0-10:20:54-Criacao iniciada
+0-10:21:30-Gerando nome
+0-10:21:30-Nome gerado Esther Viana
+0-10:21:42-Selecionado data de usuario
+1-10:22:07-Criado
+0-10:22:07-Criacao iniciada
+1-10:22:38-Criado
+0-10:22:38-Criacao iniciada
+1-10:22:49-Criado
+0-10:22:49-Criacao iniciada
+0-10:22:53-Instagram Bloqueou a pagina
+0-10:22:55-Esperando 10 segundos
+1-10:23:13-Criado
+0-10:23:13-Criacao iniciada
+0-10:23:21-Gerando nome
+0-10:23:21-Nome gerado Miguel da Cruz
+1-10:23:25-Criado
+0-10:23:25-Criacao iniciada
+1-10:24:19-Criado
+0-10:24:20-Criacao iniciada
