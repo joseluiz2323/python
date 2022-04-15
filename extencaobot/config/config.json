@@ -13,7 +13,7 @@
         "layonsemail": false
     },
     "criacao": {
-        "nome": "feminino",
+        "genero": "F",
         "quantidade_de_contas": 500,
         "senha": "gen1122",
         "tempo_entre_criacao": {
@@ -23,10 +23,10 @@
         "tempo_entre_sms": {
             "inicial": 2,
             "final": 10
-        },
-        "genero": "F"
+        }
     },
     "montagem": {
+        "mont": true,
         "bioaleatoria": true,
         "alterar_genero": true,
         "alterar_foto_de_perfil": true,
@@ -35,8 +35,8 @@
         "trocar_email": true,
         "qauntidade_de_fotos": 11,
         "tempo_entre_postagem": {
-            "inicial": 3,
-            "final": 5
+            "inicial": 5,
+            "final": 10
         },
         "seguir_recomendados": {
             "seguir": 10,

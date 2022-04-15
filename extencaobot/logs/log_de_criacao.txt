@@ -185,3 +185,270 @@
 0-10:23:25-Criacao iniciada
 1-10:24:19-Criado
 0-10:24:20-Criacao iniciada
+1-10:26:07-Criado
+0-10:26:07-Criacao iniciada
+0-10:26:11-Instagram Bloqueou a pagina
+0-10:26:13-Esperando 10 segundos
+0-10:26:21-Criacao iniciada
+0-10:26:44-Gerando nome
+0-10:26:44-Nome gerado Luiz Felipe Dias
+1-10:26:56-Criado
+0-10:26:56-Criacao iniciada
+1-10:27:20-Criado
+0-10:27:20-Criacao iniciada
+1-11:26:08-Criado
+0-11:26:08-Criacao iniciada
+0-11:26:43-Gerando nome
+0-11:26:43-Nome gerado Dra Alice Melo
+0-11:26:56-Selecionado data de usuario
+1-11:29:11-Criado
+0-11:29:11-Criacao iniciada
+0-11:29:46-Gerando nome
+0-11:29:46-Nome gerado Samuel Dias
+0-11:30:13-Selecionado data de usuario
+0-11:32:18-Criacao iniciada
+1-11:32:45-Criado
+0-11:32:45-Criacao iniciada
+0-11:33:20-Gerando nome
+0-11:33:20-Nome gerado Luiza Campos
+0-11:34:01-Selecionado data de usuario
+0-11:35:24-Criacao iniciada
+0-11:35:29-Instagram Bloqueou a pagina
+0-11:35:31-Esperando 10 segundos
+0-11:35:39-Criacao iniciada
+1-11:36:27-Criado
+0-11:36:27-Criacao iniciada
+0-11:36:31-Instagram Bloqueou a pagina
+0-11:36:33-Esperando 10 segundos
+0-11:36:41-Criacao iniciada
+0-11:37:16-Gerando nome
+0-11:37:16-Nome gerado Dr Gustavo Mendes
+0-11:37:28-Selecionado data de usuario
+1-11:42:44-Criado
+0-11:42:45-Criacao iniciada
+1-11:43:03-Criado
+1-12:11:04-Criado
+0-12:11:04-Criacao iniciada
+0-12:11:39-Gerando nome
+0-12:11:39-Nome gerado Pedro Henrique Carvalho
+0-12:11:51-Selecionado data de usuario
+0-12:15:48-Criacao iniciada
+1-12:44:21-Criado
+0-12:44:21-Criacao iniciada
+0-12:44:55-Gerando nome
+0-12:44:55-Nome gerado Dra Alice Melo
+0-12:45:23-Selecionado data de usuario
+0-12:49:57-Criacao iniciada
+0-12:50:31-Gerando nome
+0-12:50:31-Nome gerado Natalia das Neves
+0-12:50:42-Selecionado data de usuario
+0-12:55:15-Criacao iniciada
+0-12:55:52-Gerando nome
+0-12:55:52-Nome gerado Theo das Neves
+0-12:56:19-Selecionado data de usuario
+0-13:00:55-Criacao iniciada
+0-13:01:29-Gerando nome
+0-13:01:29-Nome gerado Joao Felipe Silva
+0-13:01:41-Selecionado data de usuario
+1-13:02:19-Criado
+0-13:02:20-Criacao iniciada
+1-13:02:22-Criado
+0-13:02:23-Criacao iniciada
+1-13:02:23-Criado
+0-13:02:24-Criacao iniciada
+1-13:02:26-Criado
+0-13:02:26-Criacao iniciada
+0-13:02:28-Instagram Bloqueou a pagina
+0-13:02:30-Esperando 10 segundos
+0-13:02:38-Criacao iniciada
+1-13:02:49-Criado
+0-13:02:49-Criacao iniciada
+1-13:02:53-Criado
+0-13:02:53-Criacao iniciada
+0-13:02:54-Instagram Bloqueou a pagina
+0-13:02:54-Gerando nome
+0-13:02:54-Nome gerado Maria Alice Farias
+1-13:02:55-Criado
+0-13:02:55-Criacao iniciada
+0-13:02:56-Esperando 10 segundos
+0-13:02:58-Gerando nome
+0-13:02:58-Nome gerado Maria Alice Farias
+0-13:03:01-Gerando nome
+0-13:03:01-Nome gerado Pietro Campos
+0-13:03:04-Criacao iniciada
+0-13:03:08-Instagram Bloqueou a pagina
+0-13:03:09-Selecionado data de usuario
+0-13:03:10-Esperando 10 segundos
+0-13:03:13-Gerando nome
+0-13:03:13-Nome gerado Pietra Rodrigues
+0-13:03:18-Criacao iniciada
+0-13:03:22-Selecionado data de usuario
+0-13:03:28-Gerando nome
+0-13:03:28-Nome gerado Isaac Vieira
+0-13:03:29-Gerando nome
+0-13:03:29-Nome gerado Isadora Farias
+0-13:03:30-Selecionado data de usuario
+0-13:03:39-Selecionado data de usuario
+0-13:03:40-Selecionado data de usuario
+0-13:03:52-Gerando nome
+0-13:03:52-Nome gerado Otavio Sales
+0-13:03:56-Selecionado data de usuario
+0-13:04:05-Selecionado data de usuario
+1-13:06:00-Criado
+0-13:06:00-Criacao iniciada
+0-13:06:04-Instagram Bloqueou a pagina
+0-13:06:06-Esperando 10 segundos
+0-13:06:14-Criacao iniciada
+0-13:06:21-Criacao iniciada
+0-13:06:26-Instagram Bloqueou a pagina
+0-13:06:28-Esperando 10 segundos
+0-13:06:36-Criacao iniciada
+0-13:06:49-Gerando nome
+0-13:06:49-Nome gerado Maria Cecilia Porto
+0-13:07:03-Selecionado data de usuario
+0-13:07:12-Gerando nome
+0-13:07:12-Nome gerado Raquel Porto
+0-13:07:39-Selecionado data de usuario
+0-13:08:00-Criacao iniciada
+0-13:08:17-Criacao iniciada
+0-13:08:17-Criacao iniciada
+0-13:08:21-Instagram Bloqueou a pagina
+0-13:08:23-Esperando 10 segundos
+0-13:08:31-Criacao iniciada
+0-13:08:34-Criacao iniciada
+0-13:08:35-Gerando nome
+0-13:08:35-Nome gerado Joao Pedro Alves
+0-13:08:35-Instagram Bloqueou a pagina
+0-13:08:37-Esperando 10 segundos
+0-13:08:45-Criacao iniciada
+0-13:08:47-Selecionado data de usuario
+0-13:08:49-Criacao iniciada
+0-13:08:55-Gerando nome
+0-13:08:55-Nome gerado Srta Emanuelly da Luz
+0-13:08:56-Criacao iniciada
+0-13:08:56-Criacao iniciada
+0-13:09:04-Instagram Bloqueou a pagina
+0-13:09:06-Esperando 10 segundos
+0-13:09:09-Gerando nome
+0-13:09:09-Nome gerado Maria Fernanda Pinto
+0-13:09:14-Criacao iniciada
+0-13:09:18-Instagram Bloqueou a pagina
+0-13:09:20-Esperando 10 segundos
+0-13:09:21-Gerando nome
+0-13:09:21-Nome gerado Dra Alice Melo
+0-13:09:24-Selecionado data de usuario
+0-13:09:25-Gerando nome
+0-13:09:25-Nome gerado Julia Barbosa
+0-13:09:28-Criacao iniciada
+0-13:09:33-Gerando nome
+0-13:09:33-Nome gerado Dr Gustavo Mendes
+0-13:09:36-Selecionado data de usuario
+0-13:09:38-Selecionado data de usuario
+0-13:09:39-Selecionado data de usuario
+0-13:09:46-Selecionado data de usuario
+0-13:10:08-Gerando nome
+0-13:10:08-Nome gerado Sabrina das Neves
+0-13:10:24-Selecionado data de usuario
+0-13:12:18-Criacao iniciada
+0-13:12:53-Gerando nome
+0-13:12:53-Nome gerado Emanuella Ferreira
+0-13:13:21-Selecionado data de usuario
+0-13:13:23-Criacao iniciada
+0-13:13:46-Criacao iniciada
+0-13:14:01-Gerando nome
+0-13:14:01-Nome gerado Sr Caio da Conceicao
+0-13:14:13-Criacao iniciada
+0-13:14:16-Criacao iniciada
+0-13:14:33-Criacao iniciada
+1-13:15:08-Criado
+0-13:15:08-Criacao iniciada
+0-13:15:42-Gerando nome
+0-13:15:42-Nome gerado Pietro Campos
+0-13:15:53-Selecionado data de usuario
+0-13:17:27-Criacao iniciada
+0-13:17:32-Instagram Bloqueou a pagina
+0-13:17:34-Esperando 10 segundos
+0-13:17:42-Criacao iniciada
+0-13:18:16-Gerando nome
+0-13:18:16-Nome gerado Maria Cecilia Porto
+0-13:18:42-Selecionado data de usuario
+0-13:23:15-Criacao iniciada
+0-13:23:52-Gerando nome
+0-13:23:52-Nome gerado Pedro Lucas Fernandes
+0-13:24:19-Selecionado data de usuario
+0-13:29:04-Criacao iniciada
+0-13:29:38-Gerando nome
+0-13:29:38-Nome gerado Joao Miguel Barros
+0-13:30:06-Selecionado data de usuario
+1-13:33:06-Criado
+0-13:33:07-Criacao iniciada
+0-13:33:41-Gerando nome
+0-13:33:41-Nome gerado Pedro Henrique da Paz
+0-13:34:17-Selecionado data de usuario
+0-13:34:45-Criacao iniciada
+0-13:35:22-Gerando nome
+0-13:35:22-Nome gerado Dr Pedro Lucas Fogaca
+0-13:35:50-Selecionado data de usuario
+0-13:38:50-Criacao iniciada
+0-13:38:54-Instagram Bloqueou a pagina
+0-13:38:56-Esperando 10 segundos
+0-13:39:04-Criacao iniciada
+0-13:39:42-Gerando nome
+1-13:43:27-Criado
+0-13:43:27-Criacao iniciada
+1-13:44:48-Criado
+0-13:44:49-Criacao iniciada
+1-13:45:53-Criado
+0-13:45:53-Criacao iniciada
+0-13:46:37-feminoio
+1-13:46:58-Criado
+0-13:46:58-Criacao iniciada
+0-13:47:35-feminoio
+1-13:47:59-Criado
+0-13:47:59-Criacao iniciada
+0-13:48:03-Instagram Bloqueou a pagina
+0-13:48:05-Esperando 10 segundos
+1-13:48:13-Criado
+0-13:48:13-Criacao iniciada
+0-13:48:50-feminoio
+1-13:50:17-Criado
+0-13:50:17-Criacao iniciada
+0-13:50:21-Instagram Bloqueou a pagina
+0-13:50:23-Esperando 10 segundos
+0-13:50:31-Criacao iniciada
+1-13:51:18-Criado
+0-13:51:18-Criacao iniciada
+0-13:52:04-Nome gerado socorro leocadio
+0-13:52:45-Selecionado data de usuario
+0-13:57:20-Criacao iniciada
+0-13:57:25-Instagram Bloqueou a pagina
+0-13:57:27-Esperando 10 segundos
+0-13:57:35-Criacao iniciada
+0-13:58:19-Nome gerado angelica sanders
+0-13:59:37-Selecionado data de usuario
+1-13:59:40-Criado
+0-13:59:40-Criacao iniciada
+1-13:59:42-Criado
+0-13:59:42-Criacao iniciada
+0-13:59:46-Instagram Bloqueou a pagina
+1-13:59:47-Criado
+0-13:59:48-Criacao iniciada
+0-13:59:48-Esperando 10 segundos
+1-13:59:48-Criado
+0-13:59:48-Criacao iniciada
+0-13:59:56-Criacao iniciada
+0-14:00:24-Nome gerado romana bateman
+0-14:00:27-Nome gerado mayse zaganelli
+0-14:00:28-Nome gerado adelaide douglas
+0-14:00:35-Nome gerado adamantina lemos
+0-14:00:38-Selecionado data de usuario
+0-14:00:40-Selecionado data de usuario
+0-14:00:41-Selecionado data de usuario
+0-14:01:02-Selecionado data de usuario
+1-14:01:45-Criado
+0-14:01:45-Criacao iniciada
+0-14:01:52-Instagram Bloqueou a pagina
+0-14:01:54-Esperando 10 segundos
+0-14:02:02-Criacao iniciada
+0-14:02:45-Nome gerado ranya dunn
+0-14:02:59-Selecionado data de usuario

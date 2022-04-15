@@ -154,22 +154,40 @@ def montador(config, user, senh):
                 driver.find_element_by_class_name('UP43G').click()
             except:
                 pass
+            sleep(2)
         # selecionar bio
         if config['montagem']['alterar_foto_de_perfil']:
-            simp_path = r'config\\biografias.txt'
-            with open(abs_path) as f:
-                bios = [line.strip() for line in f if line.strip()]
-            bios = random.choice(bio)
-            if bio == 0:
-                driver.get('https://www.instagram.com/accounts/edit/')
-                driver.implicitly_wait(10)
-            sleep(2)
-            driver.find_element_by_class_name('p7vTm').send_keys(bios)
-            buttons = driver.find_elements_by_xpath(
-                "//*[contains(text(), 'Enviar')]")
-            for btn in buttons:
-                btn.click()
+            ###########
+            simp_path = r'config\\bio.txt'
+            abs_path = os.path.abspath(simp_path)
+            lista = []
+            with open(abs_path, encoding='utf8') as infile:
+                for i in infile.read().splitlines():
+                    lista.append(i)
+            bio = random.choice(lista)
 
+            driver.get('https://www.instagram.com/accounts/edit/')
+            driver.implicitly_wait(10)
+            sleep(1)
+            driver.find_element_by_class_name('p7vTm').send_keys(bio)
+            sleep(2)
+            try:
+                buttons = driver.find_elements_by_xpath(
+                    "//*[contains(text(), 'Enviar')]")
+                for btn in buttons:
+                    btn.click()
+            except:
+                try:
+                    button = driver.find_element_by_xpath(
+                        '//*[@id="react-root"]/section/main/div/article/form/div[10]/div/div/button')
+                    driver.execute_script("arguments[0].click();", button)
+                except:
+                    try:
+                        button = driver.find_element_by_xpath(
+                            '/html/body/div[1]/section/main/div/article/form/div[10]/div/div/button')
+                        driver.execute_script("arguments[0].click();", button)
+                    except:
+                        pass
         sleep(2)
         c = 0
         while True:
@@ -206,14 +224,64 @@ def montador(config, user, senh):
                 except:
                     pass
                 # escolher um tempo aleatorio
-                sleep(random.randint(
-                    config['montagem']['tempo_entre_postagem']['inicial'], config['montagem']['tempo_entre_postagem']['final']))
+            sleep(random.randint(
+                config['montagem']['tempo_entre_postagem']['inicial'], config['montagem']['tempo_entre_postagem']['final']))
         # limpeza de login
+        if config['montagem']['verificar_postagens']:
+            json_code = driver.execute_script("return window._sharedData")
+            qtd_post = json_code['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['count']
+            if config['montagem']['qauntidade_de_fotos'] == qtd_post:
+                try:
+                    simp_path = r'relatorio_de_contas\\contas-ativas-completas.txt'
+                    abs_path = os.path.abspath(simp_path)
+                    nome_arquivo = abs_path
+                    arquivo = open(nome_arquivo, 'r+')
+                except FileNotFoundError:
+                    arquivo = open(nome_arquivo, 'w+')
+                arquivo.close()
+                f = open(abs_path, 'r')
+                conteudo = f.readlines()
+                conteudo.append(f'\n{user} {senh}')
+                f2 = open(abs_path, 'w')
+                f2.writelines(conteudo)
+                f2 = open(abs_path)
+                arquivo.close()
+            else:
+                try:
+                    simp_path = r'relatorio_de_contas\\contas-ativas-incompletas.txt'
+                    abs_path = os.path.abspath(simp_path)
+                    nome_arquivo = abs_path
+                    arquivo = open(nome_arquivo, 'r+')
+                except FileNotFoundError:
+                    arquivo = open(nome_arquivo, 'w+')
+                arquivo.close()
+                f = open(abs_path, 'r')
+                conteudo = f.readlines()
+                conteudo.append(f'\n{user} {senh}')
+                f2 = open(abs_path, 'w')
+                f2.writelines(conteudo)
+                f2 = open(abs_path)
+                arquivo.close()
         if config['montagem']['limpar_login']:
             limparlogins(driver)
         driver.quit()
     except:
         driver.quit()
+    try:
+        simp_path = r'relatorio_de_contas\\contas-ativas-incompletas.txt'
+        abs_path = os.path.abspath(simp_path)
+        nome_arquivo = abs_path
+        arquivo = open(nome_arquivo, 'r+')
+    except FileNotFoundError:
+        arquivo = open(nome_arquivo, 'w+')
+    arquivo.close()
+    f = open(abs_path, 'r')
+    conteudo = f.readlines()
+    conteudo.append(f'\n{user} {senh}')
+    f2 = open(abs_path, 'w')
+    f2.writelines(conteudo)
+    f2 = open(abs_path)
+    arquivo.close()
 
 
 def criacao(config):
@@ -257,7 +325,6 @@ def criacao(config):
         else:
             options.add_argument(
                 f"user-agent={config['navegador']['user_agent_fixo_desktop']}")
-
         #############################################
         options.add_argument("--lang=pt-br")
         options.add_experimental_option("prefs", prefs)
@@ -286,35 +353,45 @@ def criacao(config):
                     '/html/body/div[4]/div/div/button[1]').click()
                 sleep(0.5)
             except Exception as e:
-                print(e)
-            try:
-                driver.find_element_by_class_name(
-                    'cB_4K  ').click()
-                sleep(4)
-            except Exception as e:
-                print(e)
+                try:
+                    driver.find_element_by_class_name(
+                        'cB_4K  ').click()
+                    sleep(4)
+                except Exception as e:
+                    print(e)
             ######
             # selecionando nome para o usuario
-            simp_path = r'config\\nomes.txt'
-            abs_path = os.path.abspath(simp_path)
-            criacao_de_logo(numero_do_log, 'Gerando nome')
-            with open(abs_path) as f:
-                nomess = [line.strip() for line in f if line.strip()]
-            nomeSobrenome = random.choice(nomess)
-            criacao_de_logo(numero_do_log, f'Nome gerado {nomeSobrenome}')
+            pastanomes = r'config'
+            abs_path = os.path.abspath(pastanomes)
+            if config['criacao']['genero'] == 'F':
+                with open(abs_path+"\\nomes_f.txt") as f:
+                    nome = [line.strip() for line in f if line.strip()]
+                nome = random.choice(nome)
+                with open(abs_path+"\\sobrenomes.txt") as f:
+                    sobrenome = [line.strip() for line in f if line.strip()]
+                sobrenome = random.choice(sobrenome)
+            criacao_de_logo(numero_do_log, f'Nome gerado {nome} {sobrenome}')
+            if config['criacao']['genero'] == 'M':
+                with open(abs_path+"\\nomes_m.txt") as f:
+                    nome = [line.strip() for line in f if line.strip()]
+                nome = random.choice(nome)
+                with open(abs_path+"\\sobrenomes.txt") as f:
+                    sobrenome = [line.strip() for line in f if line.strip()]
+                sobrenome = random.choice(sobrenome)
+            nome = nome + ' ' + sobrenome
             #######
             # selecionando email
             if config["email"]["layonsemail"]:
                 emailroba = '@lyonsbot.com.br'
                 criacao_de_logo(numero_do_log, 'Gerando email')
-                email = f"{random.randint(10, 99)}{nomeSobrenome.replace(' ', '')[0:9]}{random.randint(100, 999)}"
+                email = f"{random.randint(10, 99)}{nome.replace(' ', '')[0:9]}{random.randint(100, 999)}"
                 email2 = email+emailroba
             elif config["email"]["fakemail"]:
                 email2 = capCodEmailfake(driver, 1)
             driver.find_element_by_name(
                 'emailOrPhone').send_keys(email2)
             driver.find_element_by_name(
-                'fullName').send_keys(nomeSobrenome)
+                'fullName').send_keys(nome)
             driver.find_element_by_name('username').send_keys()
             verycount = 0
             sleep(1)
@@ -424,27 +501,15 @@ def criacao(config):
                     try:
                         driver.get(
                             'https://www.instagram.com/accounts/login')
-                        driver.implicitly_wait(20)
-                        try:
-                            driver.find_element_by_xpath(
-                                '/html/body/div[4]/div/div/button[1]').click()
-                        except:
-                            pass
-                        try:
-                            driver.find_element_by_class_name(
-                                'cB_4K  ').click()
-                            sleep(4)
-                        except:
-                            pass
-
-                            driver.find_element_by_name(
-                                'username').send_keys(email2)
-                            driver.find_element_by_name(
-                                'password').send_keys(senha)
-                            driver.find_element_by_name('password').click()
-                            driver.find_element_by_name(
-                                'password').send_keys(Keys.ENTER)
-                            sleep(8)
+                        driver.implicitly_wait(10)
+                        driver.find_element_by_name(
+                            'username').send_keys(email2)
+                        driver.find_element_by_name(
+                            'password').send_keys(senha)
+                        driver.find_element_by_name('password').click()
+                        driver.find_element_by_name(
+                            'password').send_keys(Keys.ENTER)
+                        sleep(5)
                     except:
                         pass
                 driver.get('https://www.instagram.com/accounts/edit/')
@@ -463,7 +528,8 @@ def criacao(config):
                 if taxa == 5:
                     setvalorFirebase(nomeUser + ' ' + senha)
                     taxa = 0
-                    montador(config, nomeUser, senha)
+                    if config["montagem"]["mont"]:
+                        montador(config, nomeUser, senha)
                 else:
                     taxa += 1
                     try:
@@ -485,7 +551,8 @@ def criacao(config):
                         driver.quit()
                     except:
                         pass
-                    montador(config, nomeUser, senha)
+                    if config["montagem"]["mont"]:
+                        montador(config, nomeUser, senha)
 
             else:
                 driver.quit()
