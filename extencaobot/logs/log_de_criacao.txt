@@ -19,3 +19,90 @@
 0-08:22:35-Criacao iniciada
 0-08:22:52-Nome gerado gloria cavequia
 0-08:22:52-Gerando email
+0-08:23:00-Selecionado data de usuario
+0-08:23:00-esperando codigo
+0-08:23:19-codigo recebido
+0-08:23:19-764831
+1-08:23:58-Criado
+0-08:23:59-Criacao iniciada
+0-08:24:16-Nome gerado rebeca agostinho
+0-08:24:28-Selecionado data de usuario
+0-08:24:34-Criacao iniciada
+0-08:24:52-Nome gerado emilly dearruda
+0-08:24:52-Gerando email
+0-08:25:00-Selecionado data de usuario
+0-08:25:00-esperando codigo
+0-08:25:19-codigo recebido
+0-08:25:19-169248
+1-08:26:54-Criado
+0-08:26:54-Criacao iniciada
+0-08:27:13-Nome gerado ana daniels
+1-08:27:42-Criado
+0-08:27:43-Criacao iniciada
+0-08:28:02-Nome gerado melinda crowley
+1-08:28:58-Criado
+0-08:28:58-Criacao iniciada
+0-08:29:18-Nome gerado mcdonald perez
+1-08:30:07-Criado
+0-08:30:07-Criacao iniciada
+1-08:30:07-Criado
+0-08:30:08-Criacao iniciada
+0-08:30:26-Nome gerado cristiana dias
+0-08:30:26-Nome gerado emilia walker
+1-08:30:56-Criado
+0-08:30:56-Criacao iniciada
+0-08:31:15-Nome gerado mirela hamilton
+1-08:32:12-Criado
+0-08:32:13-Criacao iniciada
+0-08:32:32-Nome gerado maldonado donnelly
+1-08:33:08-Criado
+0-08:33:08-Criacao iniciada
+0-08:33:27-Nome gerado camilla maximo
+1-08:33:30-Criado
+0-08:33:30-Criacao iniciada
+0-08:33:49-Nome gerado sideria sadas
+1-08:34:24-Criado
+0-08:34:24-Criacao iniciada
+0-08:34:42-Nome gerado moran cooley
+1-08:35:04-Criado
+0-08:35:04-Criacao iniciada
+0-08:35:23-Nome gerado zarah clifford
+1-08:36:00-Criado
+0-08:36:00-Criacao iniciada
+0-08:36:19-Nome gerado mccormack sobreira
+1-08:37:29-Criado
+0-08:37:30-Criacao iniciada
+0-08:37:49-Nome gerado sophia robson
+0-08:38:37-Selecionado data de usuario
+0-08:43:17-Criacao iniciada
+0-08:43:36-Nome gerado alicia neves
+0-08:51:24-Selecionado data de usuario
+1-08:52:40-Criado
+0-08:52:41-Criacao iniciada
+0-08:53:00-Nome gerado doralice protazio
+1-08:53:21-Criado
+0-08:53:21-Criacao iniciada
+0-08:53:25-Instagram Bloqueou a pagina
+0-08:53:27-Esperando 10 segundos
+0-08:53:35-Criacao iniciada
+1-08:53:40-Criado
+0-08:53:40-Criacao iniciada
+0-08:53:59-Nome gerado socorro carter
+1-08:54:30-Criado
+0-08:54:30-Criacao iniciada
+0-08:54:49-Nome gerado andreia fayal
+1-08:55:27-Criado
+0-08:55:27-Criacao iniciada
+0-08:55:46-Nome gerado emanoella bringel
+1-08:55:51-Criado
+0-08:55:51-Criacao iniciada
+0-08:56:10-Nome gerado rosita everton
+1-08:57:02-Criado
+0-08:57:02-Criacao iniciada
+0-08:57:06-Instagram Bloqueou a pagina
+0-08:57:08-Esperando 10 segundos
+1-08:57:08-Criado
+0-08:57:08-Criacao iniciada
+0-08:57:16-Criacao iniciada
+0-08:57:27-Nome gerado andrea dowling
+0-08:57:35-Nome gerado lena goulart

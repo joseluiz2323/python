@@ -12,16 +12,14 @@ def logs():
     for i in range(0, len(lista)):
         if 'criador.exe' in lista[i]:
             count += 1
-
     return int(count/2)
 
-
-print(logs())
 
 # grava na lista de dados
 
 
 def criacao_de_logo(numbers, logs):
+
     data = datetime.today().strftime('%H:%M:%S')
     try:
         simp_path = r'logs\\log_de_criacao.txt'
@@ -33,6 +31,7 @@ def criacao_de_logo(numbers, logs):
     arquivo.close()
     f = open(abs_path, 'r')
     conteudo = f.readlines()
+
     conteudo.append(f'\n{numbers}-{data}-{logs}')
     f2 = open(abs_path, 'w')
     f2.writelines(conteudo)
