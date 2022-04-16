@@ -7,12 +7,9 @@ def limparlogins(driver):
         try:
             driver.find_element_by_xpath(
                 '/html/body/div[4]/div/div/div[3]/div[2]/button').click()
-            sleep(10)
+            sleep(4)
         except:
             pass
-        if driver.title == 'Instagram • Instagram':
-            driver.quit()
-
         driver.implicitly_wait(5)
         try:
             driver.find_element_by_xpath(

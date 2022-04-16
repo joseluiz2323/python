@@ -27,7 +27,6 @@ def capCodEmail(email, num, criacao_de_logo):
         count += 1
         try:
             sleep(4)
-            print(count)
             if count == 10:
                 return 0
             response = requests.get(
@@ -44,22 +43,32 @@ def capCodEmail(email, num, criacao_de_logo):
             pass
 
 
-def selecionarlistadefotos():
+def selecionarlistadefotos(config):
     fotos = []
     pastas = []
 
     simp_path = r'fotos'
     abs_path = os.path.abspath(simp_path)
-
-    count = 0
-    print(abs_path)
-    for diretorio, subpastas, arquivos in os.walk(''+abs_path+''):
-        count += 1
-        pastas.append(subpastas)
-    pasta = f'{abs_path}\\{pastas[0][random.randint(0, len(pastas[0])-1)]}'
-    for arquivo in os.walk(pasta):
-        if arquivo[-4:] == '.jpg' or '.png' or '.jpeg':
-            fotos.append(arquivo)
+    if config['criacao']['genero'] == 'F':
+        count = 0
+        abs_path = abs_path+"\\femenino"
+        for diretorio, subpastas, arquivos in os.walk(abs_path):
+            count += 1
+            pastas.append(subpastas)
+        pasta = f'{abs_path}\\{pastas[0][random.randint(0, len(pastas[0])-1)]}'
+        for arquivo in os.walk(pasta):
+            if arquivo[-4:] == '.jpg' or '.png' or '.jpeg':
+                fotos.append(arquivo)
+    else:
+        count = 0
+        abs_path = abs_path+"\\masculino"
+        for diretorio, subpastas, arquivos in os.walk(abs_path):
+            count += 1
+            pastas.append(subpastas)
+        pasta = f'{abs_path}\\{pastas[0][random.randint(0, len(pastas[0])-1)]}'
+        for arquivo in os.walk(pasta):
+            if arquivo[-4:] == '.jpg' or '.png' or '.jpeg':
+                fotos.append(arquivo)
     return fotos[0][2], pasta
 
 
@@ -71,6 +80,8 @@ def capCodEmailfake(driver, temp):
             driver.execute_script("window.open('');")
             driver.switch_to.window(driver.window_handles[1])
             driver.get('https://www.fakemail.net/')
+            driver.implicitly_wait(10)
+            print(driver.title)
             email = driver.find_element_by_class_name('animace').text
             driver.switch_to.window(driver.window_handles[0])
         else:
@@ -147,7 +158,8 @@ def montador(config, user, senh):
             bio = 1
             driver.get('https://www.instagram.com/accounts/edit/')
             driver.implicitly_wait(10)
-            fotos, pasta = selecionarlistadefotos()
+            fotos, pasta = selecionarlistadefotos(config)
+
             try:
                 driver.find_element_by_class_name('tb_sK').send_keys(
                     f'{pasta}\\{random.choice(fotos)}')
@@ -155,9 +167,9 @@ def montador(config, user, senh):
                 driver.find_element_by_class_name('UP43G').click()
             except:
                 pass
-            sleep(2)
+            sleep(3)
         # selecionar bio
-        if config['montagem']['alterar_foto_de_perfil']:
+        if config['montagem']['bioaleatoria']:
             ###########
             simp_path = r'config\\bio.txt'
             abs_path = os.path.abspath(simp_path)
@@ -165,7 +177,7 @@ def montador(config, user, senh):
             with open(abs_path, encoding='utf8') as infile:
                 for i in infile.read().splitlines():
                     lista.append(i)
-            bio = random.choice(lista)
+            bio = str(random.choice(lista))
 
             driver.get('https://www.instagram.com/accounts/edit/')
             driver.implicitly_wait(10)
@@ -191,6 +203,12 @@ def montador(config, user, senh):
                         pass
         sleep(2)
         c = 0
+        simp_path = r'config\\legendas.txt'
+        abs_path = os.path.abspath(simp_path)
+        lista = []
+        with open(abs_path, encoding='utf8') as infile:
+            for i in infile.read().splitlines():
+                lista.append(i)
         while True:
             c += 1
             try:
@@ -212,17 +230,28 @@ def montador(config, user, senh):
                 driver.execute_script(
                     "delete HTMLInputElement.prototype.click")
                 driver.implicitly_wait(10)
+                fotoss = random.choice(fotos)
+                fotos.remove(fotoss)
                 driver.find_element_by_class_name('tb_sK').send_keys(
-                    f'{pasta}\\{random.choice(fotos)}')
+                    f'{pasta}\\{fotoss}')
                 sleep(5)
                 driver.find_element_by_class_name('UP43G').click()
-                sleep(5)
+                sleep(2)
+                if config['montagem']['legenda']:
+                    legenda =str( random.choice(lista))
+                    try:
+                            driver.find_element_by_class_name(
+                            '_472V_').send_keys(legenda)
+                            sleep(2)
+                    except:
+                        driver.find_element_by_class_name(
+                            '_472V_').send_keys(' ')
                 driver.find_element_by_class_name('UP43G').click()
             except:
                 very += 1
                 if very == 4:
                     break
-                print('erro')
+            
                 try:
                     driver.find_element_by_class_name('cB_4K  ').click()
                 except:
@@ -289,7 +318,6 @@ def montador(config, user, senh):
 
 
 def criacao(config):
-    print(config)
     numero_do_log = logs()
     bre = 0
     taxa = 0
@@ -339,7 +367,6 @@ def criacao(config):
             options=options, service=chrome_service)
         daley = driver.implicitly_wait(15)
         driver.get('https://www.instagram.com/accounts/emailsignup/')
-        print(driver.title)
         if driver.title == 'Página não encontrada • Instagram':
             driver.quit()
             criacao_de_logo(numero_do_log, 'Instagram Bloqueou a pagina')
@@ -357,12 +384,7 @@ def criacao(config):
                     '/html/body/div[4]/div/div/button[1]').click()
                 sleep(0.5)
             except Exception as e:
-                try:
-                    driver.find_element_by_class_name(
-                        'cB_4K  ').click()
-                    sleep(4)
-                except Exception as e:
-                    print(e)
+                pass
             ######
             # selecionando nome para o usuario
             pastanomes = r'config'
@@ -453,7 +475,6 @@ def criacao(config):
                 if config["email"]["layonsemail"]:
                     codigoEmail = capCodEmail(
                         email, numero_do_log, criacao_de_logo)
-                    print(codigoEmail)
                     if codigoEmail == '':
                         sleep(5)
                         codigoEmail = (
@@ -464,7 +485,6 @@ def criacao(config):
                         driver.quit()
                 elif config["email"]["fakemail"]:
                     codigoEmail = capCodEmailfake(driver, 20)
-                    print(codigoEmail)
                     if codigoEmail == 0:
                         sleep(5)
                         codigoEmail = capCodEmailfake(driver, 5)
@@ -480,7 +500,6 @@ def criacao(config):
                 driver.find_element_by_name(
                     'email_confirmation_code').send_keys(codigoEmail)
                 sleep(0.2)
-                print(driver.title)
                 button = driver.find_elements_by_class_name(
                     'y3zKF')[1]
                 try:
@@ -500,7 +519,6 @@ def criacao(config):
                     button.click()
                 except:
                     pass
-                print(driver.title)
                 if driver.title == 'Entrar • Instagram':
                     try:
                         driver.get(
