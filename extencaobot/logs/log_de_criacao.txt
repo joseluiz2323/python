@@ -106,3 +106,81 @@
 0-08:57:16-Criacao iniciada
 0-08:57:27-Nome gerado andrea dowling
 0-08:57:35-Nome gerado lena goulart
+1-10:58:25-Criado
+0-10:58:25-Criacao iniciada
+1-05:31:45-Criado
+0-05:31:45-Criacao iniciada
+0-05:32:03-Nome gerado silvia guajajara
+0-05:32:14-Selecionado data de usuario
+0-05:32:53-Criacao iniciada
+0-05:33:10-Nome gerado emanuella belfort
+0-05:33:31-Selecionado data de usuario
+0-05:34:28-Criacao iniciada
+0-05:34:47-Nome gerado miller coleman
+1-05:34:55-Criado
+0-05:34:55-Criacao iniciada
+0-05:34:59-Selecionado data de usuario
+0-05:35:14-Nome gerado araci demenezes
+0-05:35:14-Gerando email
+0-05:35:22-Selecionado data de usuario
+0-05:35:22-esperando codigo
+0-05:35:29-Criacao iniciada
+0-05:35:39-codigo recebido
+0-05:35:39-146025
+0-05:35:48-Nome gerado glauce neres
+0-05:36:01-Selecionado data de usuario
+0-05:36:21-Criacao iniciada
+0-05:36:38-Criacao iniciada
+0-05:36:40-Nome gerado ligia eaton
+0-05:36:40-Gerando email
+0-05:36:48-Selecionado data de usuario
+0-05:36:48-esperando codigo
+0-05:36:57-Nome gerado carmelia brady
+0-05:37:05-codigo recebido
+0-05:37:05-712580
+0-05:37:09-Selecionado data de usuario
+0-05:37:25-Criacao iniciada
+0-05:37:44-Nome gerado maia scott
+0-05:37:44-Gerando email
+0-05:37:49-Criacao iniciada
+0-05:37:52-Selecionado data de usuario
+0-05:37:52-esperando codigo
+0-05:38:07-Nome gerado eloa ramos
+0-05:38:13-codigo recebido
+0-05:38:13-850139
+0-05:38:20-Selecionado data de usuario
+0-05:38:39-Criacao iniciada
+0-05:38:57-Nome gerado rosana francelino
+0-05:38:57-Gerando email
+0-05:39:05-Criacao iniciada
+0-05:39:20-Selecionado data de usuario
+0-05:39:20-esperando codigo
+0-05:39:25-Nome gerado zenaide medeiros
+0-05:39:37-Selecionado data de usuario
+0-05:39:42-codigo recebido
+0-05:39:42-537691
+0-05:40:02-Criacao iniciada
+0-05:40:19-Criacao iniciada
+0-05:40:21-Nome gerado betina clark
+0-05:40:21-Gerando email
+0-05:40:38-Nome gerado leilane travassos
+0-05:40:59-Selecionado data de usuario
+0-05:40:59-esperando codigo
+0-05:41:01-Selecionado data de usuario
+0-05:41:16-codigo recebido
+0-05:41:16-740892
+0-05:41:42-Criacao iniciada
+0-05:41:44-Criacao iniciada
+0-05:42:01-Nome gerado graca saportella
+0-05:42:03-Nome gerado wanderleia araujo
+0-05:42:03-Gerando email
+0-05:42:22-Selecionado data de usuario
+0-05:42:58-Criacao iniciada
+0-05:43:17-Nome gerado celiny fontes
+0-05:43:29-Selecionado data de usuario
+0-05:43:44-Selecionado data de usuario
+0-05:43:44-esperando codigo
+0-05:44:00-codigo recebido
+0-05:44:00-940163
+0-05:44:10-Criacao iniciada
+0-05:44:20-Criacao iniciada

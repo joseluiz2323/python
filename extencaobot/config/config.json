@@ -9,8 +9,8 @@
         "user_agent_fixo_mobile": "Mozilla/5.0 (Linux; Android 6.0.1; SM-G532G Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Mobile Safari/537.36"
     },
     "email": {
-        "fakemail": true,
-        "layonsemail": false
+        "fakemail": false,
+        "layonsemail": true
     },
     "criacao": {
         "genero": "F",
