@@ -21,7 +21,7 @@ class Trenstagram:
         self.session.headers.update({'Referer': self.BASE_URL})
         self.logged_in = False
 
-    def login(self, USERNAME, PASSWD):
+    def new_login(self, USERNAME, PASSWD):
         self.PASSWD = PASSWD
         self.username = USERNAME
         try:
@@ -38,7 +38,7 @@ class Trenstagram:
                 {'X-CSRFToken': login.cookies['csrftoken']})
             self.csrftoken = login.cookies['csrftoken']
             self.session_id = self.session.cookies['sessionid']
-           #pegar o cookie
+           # pegar o cookie
             self.cookie = login.headers['set-cookie']
             if(login.json()['authenticated']):
                 self.logged_in = True
@@ -64,7 +64,7 @@ class Trenstagram:
                     self.email = r2.text.split('"email":')[1].split(',')[
                         0].replace('"', '')
                 except:
-                    Trenstagram.login(self, self.username, self.password)
+                    Trenstagram.new_login(self, self.username, self.PASSWD)
                     print('Error Getting Email')
             return True
         print("Faça login primeiro")
@@ -201,8 +201,7 @@ class Trenstagram:
             "content-length": "1",
             "X-Entity-Name": f"fb_uploader_{micro_time}",
             "Offset": "0",
-            "User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko)"
-                          " Chrome/77.0.3865.120 Safari/537.36",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36",
             "x-entity-length": "1",
             "X-Instagram-Rupload-Params": f'{{"media_type": 1, "upload_id": {micro_time}, "upload_media_height": 1080,'
                                           f' "upload_media_width": 1080}}',
@@ -238,7 +237,7 @@ class Trenstagram:
             'x-instagram-ajax': 'adb961e446b7-hot',
             'content-type': 'application/x-www-form-urlencoded',
             'accept': '*/*',
-            'user-agent': 'Mozilla/5.0 (Linux; Android 11; SM-A127M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.92 Mobile Safari/537.36',
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36',
             'x-requested-with': 'XMLHttpRequest',
             'x-csrftoken': self.csrftoken,
             'x-ig-app-id': '1217981644879628',
@@ -257,8 +256,12 @@ class Trenstagram:
 
         response = requests.request(
             "POST", url, headers=headers, data=payload, cookies=cookies)
-        json_data = json.loads(response.text)
+        try:
 
+            json_data = json.loads(response.text)
+        except:
+            print(response.text)
+            return False
         if json_data["status"] == "ok":
             return json_data
 
@@ -277,11 +280,13 @@ class Trenstagram:
             'x-instagram-ajax': '894dd5337020',
             'content-type': 'application/x-www-form-urlencoded',
             'accept': '*/*',
-            'user-agent': 'Mozilla/5.0 (Linux; Android 11; SM-A127M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.92 Mobile Safari/537.36',
+
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36',
             'x-requested-with': 'XMLHttpRequest',
             'x-csrftoken': self.csrftoken,
             'x-ig-app-id': '1217981644879628',
             'origin': 'https://www.instagram.com',
+            "sec-ch-ua-platform": "Android",
             'sec-fetch-site': 'same-origin',
             'sec-fetch-mode': 'cors',
             'sec-fetch-dest': 'empty',
@@ -307,10 +312,28 @@ class Trenstagram:
 
         raise Exception(json_data)
 
+    def remover_block(self):
+
+        self.session.headers.update(
+            {
+                "Accept": "*/*",
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Referer": "https://www.instagram.com/challenge/?next=/",
+                'x-instagram-ajax': '894dd5337020',
+                "X-Requested-With": "XMLHttpRequest",
+                "X-ASBD-ID": "198387",
+                "X-IG-App-ID": "936619743392459",
+                "X-IG-WWW-Claim": "hmac.AR2QUhgG0rWmfyYVK_PuxTT0fB41fGGM4xPQfTg04UpHRoP8"})
+        r = self.session.get('https://www.instagram.com/challenge/',
+                             headers=self.session.headers, cookies=self.session.cookies)
+        r
+
 
 log = Trenstagram()
 log.AddCH()
-log.login('srpedrolucasdaconceicao64', 'gen1122')
-
-with open("imgs\\post.jpg", "rb") as f:
-    log.story(f, "teste")
+log.new_login('blendahunt8', 'gen1122')
+log.Save_login()
+# with open("imgs\\post.jpg", "rb") as f:
+#     log.post(f, "teste")
+# sleep(10)
+log.remover_block()
