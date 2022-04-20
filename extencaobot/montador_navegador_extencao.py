@@ -172,7 +172,7 @@ def montador_extencao(config, user, senh):
         if config['montagem']['postagen_de_story']['quantidade_fotos'] > 0:
             clint.postar_story(
                 fotos, pasta, config=config)
-        sleep(10)
+        sleep(5)
         if config['montagem']['postagen_de_destaque']['quantidade_fotos'] > 0:
             clint.postar_destaque(config)
     # limpeza de login
