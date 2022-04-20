@@ -8,316 +8,12 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 import random
 import requests
 from subprocess import CREATE_NO_WINDOW
-from credentialss import getvalueFirebase, setvalorFirebase
-from gravar_logs import criacao_de_logo, logs
-from limpar_historico import limparlogins
-from open_json import ler_config_json
-
-
-chrome_service = ChromeService('./chromedriver.exe')
-chrome_service.creationflags = CREATE_NO_WINDOW
-######
-
-
-def capCodEmail(email, num, criacao_de_logo):
-    ######
-    criacao_de_logo(num, 'esperando codigo')
-    count = 0
-    while True:
-        count += 1
-        try:
-            sleep(4)
-            if count == 10:
-                return 0
-            response = requests.get(
-                f'https://lyonsbot.com.br/api/messages/{email}/yvEW5xKHliptoAeY3LZw')
-            codigodados = response.json()
-            try:
-                if codigodados[0]['sender_name'] == 'Instagram':
-                    criacao_de_logo(num, 'codigo recebido')
-                    criacao_de_logo(num, codigodados[0]['subject'].split()[0])
-                    return codigodados[0]['subject'].split()[0]
-            except:
-                pass
-        except:
-            pass
-
-
-def selecionarlistadefotos(config):
-    fotos = []
-    pastas = []
-
-    simp_path = r'fotos'
-    abs_path = os.path.abspath(simp_path)
-    if config['criacao']['genero'] == 'F':
-        count = 0
-        abs_path = abs_path+"\\femenino"
-        for diretorio, subpastas, arquivos in os.walk(abs_path):
-            count += 1
-            pastas.append(subpastas)
-        pasta = f'{abs_path}\\{pastas[0][random.randint(0, len(pastas[0])-1)]}'
-        for arquivo in os.walk(pasta):
-            if arquivo[-4:] == '.jpg' or '.png' or '.jpeg':
-                fotos.append(arquivo)
-    else:
-        count = 0
-        abs_path = abs_path+"\\masculino"
-        for diretorio, subpastas, arquivos in os.walk(abs_path):
-            count += 1
-            pastas.append(subpastas)
-        pasta = f'{abs_path}\\{pastas[0][random.randint(0, len(pastas[0])-1)]}'
-        for arquivo in os.walk(pasta):
-            if arquivo[-4:] == '.jpg' or '.png' or '.jpeg':
-                fotos.append(arquivo)
-    return fotos[0][2], pasta
-
-
-def capCodEmailfake(driver, temp):
-    try:
-        email = ''
-        codigoinsta = 0
-        if temp == 1:
-            driver.execute_script("window.open('');")
-            driver.switch_to.window(driver.window_handles[1])
-            driver.get('https://www.fakemail.net/')
-            driver.implicitly_wait(10)
-            if driver.title != 'FakeMail | Temp Mail Addresses':
-                driver.get('https://www.fakemail.net/')
-                driver.implicitly_wait(10)
-            email = driver.find_element_by_class_name('animace').text
-            driver.switch_to.window(driver.window_handles[0])
-        else:
-            driver.switch_to.window(driver.window_handles[1])
-            count = 0
-            while True:
-                count += 1
-                if count == temp:
-                    break
-                sleep(1.5)
-                codigo = driver.find_element_by_id('schranka').text
-                codigo = codigo.split()
-                if codigo[0] == '"Instagram"':
-                    codigoinsta = codigo[1]
-                if codigoinsta != 0:
-                    driver.close()
-                    break
-                driver.refresh()
-            driver.switch_to.window(driver.window_handles[0])
-
-        if codigoinsta != 0:
-            return codigoinsta
-        elif email != '':
-            return email
-    except:
-        return 0
-
-
-def montador(config, user, senh):
-    very = 0
-    try:
-        options = webdriver.ChromeOptions()
-        if config["navegador"]["ocultar_navegador"]:
-            options.add_argument("--headless")
-        if config['navegador']['user_agent_aleatorio_mobile']:
-            simp_path = r'config\\useragents_mobile.txt'
-            abs_path = os.path.abspath(simp_path)
-            with open(abs_path) as f:
-                usermobi = [line.strip() for line in f if line.strip()]
-            useragents = random.choice(usermobi)
-            mobile_emulation = {"deviceMetrics": {
-                "pixelRatio": 4.0}, "userAgent": useragents}
-            options.add_experimental_option(
-                "mobileEmulation", mobile_emulation)
-        else:
-            options.add_argument(
-                f'user-agent={config["navegador"]["user_agent_fixo_mobile"]}')
-        if config['navegador']['navegador_anonimo']:
-            options.add_argument('--incognito')
-        options.add_argument("--window-size=640,920")
-        options.creationflags = CREATE_NO_WINDOW
-        driver = webdriver.Chrome(
-            executable_path=r'chromedriver.exe', options=options
-        )
-
-        driver.get('https://www.instagram.com/accounts/login/?next=/login/')
-        driver.implicitly_wait(10)
-        try:
-            driver.find_element_by_class_name(
-                'cB_4K  ').click()
-            sleep(4)
-        except:
-            pass
-        driver.find_element_by_name('username').send_keys(user)
-        sleep(0.1)
-        driver.find_element_by_name('password').send_keys(senh)
-        sleep(0.1)
-        driver.find_element_by_name('password').click()
-        driver.find_element_by_name('password').send_keys(Keys.ENTER)
-        sleep(10)
-        # foto de perfil
-        bio = 0
-        if config['montagem']['alterar_foto_de_perfil']:
-            bio = 1
-            driver.get('https://www.instagram.com/accounts/edit/')
-            driver.implicitly_wait(10)
-            fotos, pasta = selecionarlistadefotos(config)
-
-            try:
-                driver.find_element_by_class_name('tb_sK').send_keys(
-                    f'{pasta}\\{random.choice(fotos)}')
-                sleep(2)
-                driver.find_element_by_class_name('UP43G').click()
-            except:
-                pass
-            sleep(3)
-        # selecionar bio
-        if config['montagem']['bioaleatoria']:
-            ###########
-            simp_path = r'config\\bio.txt'
-            abs_path = os.path.abspath(simp_path)
-            lista = []
-            with open(abs_path, encoding='utf8') as infile:
-                for i in infile.read().splitlines():
-                    lista.append(i)
-            bio = str(random.choice(lista))
-
-            driver.get('https://www.instagram.com/accounts/edit/')
-            driver.implicitly_wait(10)
-            sleep(1)
-            driver.find_element_by_class_name('p7vTm').send_keys(bio)
-            sleep(2)
-            try:
-                buttons = driver.find_elements_by_xpath(
-                    "//*[contains(text(), 'Enviar')]")
-                for btn in buttons:
-                    btn.click()
-            except:
-                try:
-                    button = driver.find_element_by_xpath(
-                        '//*[@id="react-root"]/section/main/div/article/form/div[10]/div/div/button')
-                    driver.execute_script("arguments[0].click();", button)
-                except:
-                    try:
-                        button = driver.find_element_by_xpath(
-                            '/html/body/div[1]/section/main/div/article/form/div[10]/div/div/button')
-                        driver.execute_script("arguments[0].click();", button)
-                    except:
-                        pass
-        sleep(2)
-        c = 0
-        simp_path = r'config\\legendas.txt'
-        abs_path = os.path.abspath(simp_path)
-        lista = []
-        with open(abs_path, encoding='utf8') as infile:
-            for i in infile.read().splitlines():
-                lista.append(i)
-        while True:
-            c += 1
-            try:
-                if c == config['montagem']['qauntidade_de_fotos']:
-                    break
-                driver.get(f'https://www.instagram.com/{user}/')
-                driver.implicitly_wait(10)
-
-                driver.execute_script(
-                    "HTMLInputElement.prototype.click = function() {                     " +
-                    "  if(this.type !== 'file') HTMLElement.prototype.click.call(this);  " +
-                    "};                                                                  ")
-                try:
-                    driver.find_element_by_xpath(
-                        '//div[@data-testid="new-post-button"]').click()
-                except:
-                    driver.find_element_by_xpath(
-                        "//div[@data-testid='new-post-button']/*[name()='svg']").click()
-
-                driver.execute_script(
-                    "delete HTMLInputElement.prototype.click")
-                driver.implicitly_wait(10)
-                fotoss = random.choice(fotos)
-                fotos.remove(fotoss)
-                driver.find_element_by_class_name('tb_sK').send_keys(
-                    f'{pasta}\\{fotoss}')
-                sleep(5)
-                driver.find_element_by_class_name('UP43G').click()
-                sleep(2)
-                if config['montagem']['legenda']:
-                    legenda = str(random.choice(lista))
-                    try:
-                        driver.find_element_by_class_name(
-                            '_472V_').send_keys(legenda)
-                        sleep(2)
-                    except:
-                        driver.find_element_by_class_name(
-                            '_472V_').send_keys(' ')
-                driver.find_element_by_class_name('UP43G').click()
-            except:
-                very += 1
-                if very == 4:
-                    break
-
-                try:
-                    driver.find_element_by_class_name('cB_4K  ').click()
-                except:
-                    pass
-                # escolher um tempo aleatorio
-            sleep(random.randint(
-                config['montagem']['tempo_entre_postagem']['inicial'], config['montagem']['tempo_entre_postagem']['final']))
-        # limpeza de login
-        if config['montagem']['verificar_postagens']:
-            json_code = driver.execute_script("return window._sharedData")
-            qtd_post = json_code['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['count']
-            if config['montagem']['qauntidade_de_fotos'] == qtd_post:
-                try:
-                    simp_path = r'relatorio_de_contas\\contas-ativas-completas.txt'
-                    abs_path = os.path.abspath(simp_path)
-                    nome_arquivo = abs_path
-                    arquivo = open(nome_arquivo, 'r+')
-                except FileNotFoundError:
-                    arquivo = open(nome_arquivo, 'w+')
-                arquivo.close()
-                f = open(abs_path, 'r')
-                conteudo = f.readlines()
-                conteudo.append(f'\n{user} {senh}')
-                f2 = open(abs_path, 'w')
-                f2.writelines(conteudo)
-                f2 = open(abs_path)
-                arquivo.close()
-            else:
-                try:
-                    simp_path = r'relatorio_de_contas\\contas-ativas-incompletas.txt'
-                    abs_path = os.path.abspath(simp_path)
-                    nome_arquivo = abs_path
-                    arquivo = open(nome_arquivo, 'r+')
-                except FileNotFoundError:
-                    arquivo = open(nome_arquivo, 'w+')
-                arquivo.close()
-                f = open(abs_path, 'r')
-                conteudo = f.readlines()
-                conteudo.append(f'\n{user} {senh}')
-                f2 = open(abs_path, 'w')
-                f2.writelines(conteudo)
-                f2 = open(abs_path)
-                arquivo.close()
-        if config['montagem']['limpar_login']:
-            limparlogins(driver)
-        driver.quit()
-    except:
-        driver.quit()
-    try:
-        simp_path = r'relatorio_de_contas\\contas-ativas-incompletas.txt'
-        abs_path = os.path.abspath(simp_path)
-        nome_arquivo = abs_path
-        arquivo = open(nome_arquivo, 'r+')
-    except FileNotFoundError:
-        arquivo = open(nome_arquivo, 'w+')
-    arquivo.close()
-    f = open(abs_path, 'r')
-    conteudo = f.readlines()
-    conteudo.append(f'\n{user} {senh}')
-    f2 = open(abs_path, 'w')
-    f2.writelines(conteudo)
-    f2 = open(abs_path)
-    arquivo.close()
+from api.api_email import capCodEmail, capCodEmailfake
+from func.credentialss import getvalueFirebase, setvalorFirebase
+from func.gravar_contas import gravador_de_contas
+from func.gravar_logs import criacao_de_logo, logs
+from func.open_json import ler_config_json
+from montador_navegador_extencao import montador_extencao
 
 
 def criacao(config):
@@ -346,7 +42,7 @@ def criacao(config):
             if config["navegador"]["ocultar_navegador"]:
                 options.add_argument("--headless")
             options.add_argument('--profile-directory=Default')
-            options.add_argument('--window-size=540,920')
+            options.add_argument('--window-size=530,910')
             if config["navegador"]["desativar_imagens"]:
                 prefs = {"profile.managed_default_content_settings.images": 2}
             if config["navegador"]["user_agent_aleatorio_desktop"]:
@@ -413,12 +109,12 @@ def criacao(config):
                 nome = nome + ' ' + sobrenome
                 #######
                 # selecionando email
-                if config["email"]["layonsemail"]:
+                if config["email"]["email"] == 1:
                     emailroba = '@lyonsbot.com.br'
                     criacao_de_logo(numero_do_log, 'Gerando email')
                     email = f"{random.randint(10, 99)}{nome.replace(' ', '')[0:9]}{random.randint(100, 999)}"
                     email2 = email+emailroba
-                elif config["email"]["fakemail"]:
+                elif config["email"]["email"] == 0:
                     email2 = capCodEmailfake(driver, 1)
                 driver.find_element_by_name(
                     'emailOrPhone').send_keys(email2)
@@ -479,7 +175,7 @@ def criacao(config):
                         numero_do_log, 'Selecionado data de usuario')
                     ################ ##############
                     # verifica o email para confirmar o confirmacao do codigo de cadastro
-                    if config["email"]["layonsemail"]:
+                    if config["email"]["email"] == 1:
                         codigoEmail = capCodEmail(
                             email, numero_do_log, criacao_de_logo)
                         if codigoEmail == '':
@@ -490,7 +186,7 @@ def criacao(config):
                         sleep(2)
                         if codigoEmail == 0:
                             driver.quit()
-                    elif config["email"]["fakemail"]:
+                    elif config["email"]["email"] == 0:
                         codigoEmail = capCodEmailfake(driver, 20)
                         if codigoEmail == 0:
                             sleep(5)
@@ -560,30 +256,18 @@ def criacao(config):
                         setvalorFirebase(nomeUser + ' ' + senha)
                         taxa = 0
                         if config["montagem"]["mont"]:
-                            montador(config, nomeUser, senha)
+                            montador_extencao(config, nomeUser, senha)
                     else:
                         taxa += 1
-                        try:
-                            simp_path = r'relatorio_de_contas\\contas.txt'
-                            abs_path = os.path.abspath(simp_path)
-                            nome_arquivo = abs_path
-                            arquivo = open(nome_arquivo, 'r+')
-                        except FileNotFoundError:
-                            arquivo = open(nome_arquivo, 'w+')
-                        arquivo.close()
-                        f = open(abs_path, 'r')
-                        conteudo = f.readlines()
-                        conteudo.append(f'\n{nomeUser} {senha}')
-                        f2 = open(abs_path, 'w')
-                        f2.writelines(conteudo)
-                        f2 = open(abs_path, 'r')
-                        arquivo.close()
+                        gravador_de_contas(nomeUser, senha)
                         try:
                             driver.quit()
                         except:
                             pass
+                        if config["montagem"]["montar_por_api"]:
+                            montador_extencao(config, nomeUser, senha)
                         if config["montagem"]["mont"]:
-                            montador(config, nomeUser, senha)
+                            montador_extencao(config, nomeUser, senha)
 
                 else:
                     driver.quit()
